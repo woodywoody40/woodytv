@@ -121,7 +121,7 @@ export default function VideoCard({
         const fav = await isFavorited(actualSource, actualId);
         setFavorited(fav);
       } catch (err) {
-        throw new Error('檢查收藏狀態失敗');
+        throw new Error('检查收藏状态失败');
       }
     };
 
@@ -164,7 +164,7 @@ export default function VideoCard({
           setFavorited(true);
         }
       } catch (err) {
-        throw new Error('切換收藏狀態失敗');
+        throw new Error('切换收藏状态失败');
       }
     },
     [
@@ -189,7 +189,7 @@ export default function VideoCard({
         await deletePlayRecord(actualSource, actualId);
         onDelete?.();
       } catch (err) {
-        throw new Error('刪除播放記錄失敗');
+        throw new Error('删除播放记录失败');
       }
     },
     [from, actualSource, actualId, onDelete]
@@ -269,11 +269,11 @@ export default function VideoCard({
 
   return (
     <div
-      className='group relative w-full rounded-xl bg-transparent cursor-pointer video-card-hover card-shine'
+      className='group relative w-full rounded-lg bg-transparent cursor-pointer transition-all duration-300 ease-in-out hover:scale-[1.05] hover:z-[500]'
       onClick={handleClick}
     >
       {/* 海报容器 */}
-      <div className='relative aspect-[2/3] overflow-hidden rounded-xl bg-gradient-to-br from-morandi-warmGray/30 to-morandi-dustyRose/20 dark:from-stone-800 dark:to-stone-700 shadow-lg'>
+      <div className='relative aspect-[2/3] overflow-hidden rounded-lg'>
         {/* 骨架屏 */}
         {!isLoading && <ImagePlaceholder aspectRatio='aspect-[2/3]' />}
         {/* 图片 */}
@@ -359,7 +359,7 @@ export default function VideoCard({
       {config.showProgress && progress !== undefined && (
         <div className='mt-1 h-1 w-full bg-gray-200 rounded-full overflow-hidden'>
           <div
-            className='h-full bg-morandi-sage transition-all duration-500 ease-out'
+            className='h-full bg-green-500 transition-all duration-500 ease-out'
             style={{ width: `${progress}%` }}
           />
         </div>
@@ -368,7 +368,7 @@ export default function VideoCard({
       {/* 标题与来源 */}
       <div className='mt-2 text-center'>
         <div className='relative'>
-          <span className='block text-sm font-semibold truncate text-stone-800 dark:text-stone-100 transition-colors duration-300 ease-in-out group-hover:text-morandi-sage dark:group-hover:text-morandi-mintGreen peer'>
+          <span className='block text-sm font-semibold truncate text-gray-900 dark:text-gray-100 transition-colors duration-300 ease-in-out group-hover:text-green-600 dark:group-hover:text-green-400 peer'>
             {actualTitle}
           </span>
           {/* 自定义 tooltip */}
@@ -379,7 +379,7 @@ export default function VideoCard({
         </div>
         {config.showSourceName && source_name && (
           <span className='block text-xs text-gray-500 dark:text-gray-400 mt-1'>
-            <span className='inline-block border rounded px-2 py-0.5 border-stone-500/60 dark:border-stone-400/60 transition-all duration-300 ease-in-out group-hover:border-morandi-sage/60 group-hover:text-morandi-sage dark:group-hover:text-morandi-mintGreen'>
+            <span className='inline-block border rounded px-2 py-0.5 border-gray-500/60 dark:border-gray-400/60 transition-all duration-300 ease-in-out group-hover:border-green-500/60 group-hover:text-green-600 dark:group-hover:text-green-400'>
               {source_name}
             </span>
           </span>

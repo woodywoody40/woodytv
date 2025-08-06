@@ -71,7 +71,7 @@ export async function POST(req: NextRequest) {
     const config = await getConfig();
     // 校验是否开放注册
     if (!config.UserConfig.AllowRegister) {
-      return NextResponse.json({ error: '当前未开放注册' }, { status: 400 });
+      return NextResponse.json({ error: '使用者名稱和密碼不能為空' }, { status: 400 });
     }
 
     const { username, password } = await req.json();

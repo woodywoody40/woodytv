@@ -4,13 +4,12 @@ import type { Metadata, Viewport } from 'next';
 import { Inter } from 'next/font/google';
 
 import './globals.css';
-import '@/styles/animations.css';
-import '@/styles/morandi-theme.css';
 import 'sweetalert2/dist/sweetalert2.min.css';
 
 import { getConfig } from '@/lib/config';
 import RuntimeConfig from '@/lib/runtime';
 
+import { GlobalErrorIndicator } from '../components/GlobalErrorIndicator';
 import { SiteProvider } from '../components/SiteProvider';
 import { ThemeProvider } from '../components/ThemeProvider';
 
@@ -105,7 +104,7 @@ export default async function RootLayout({
         />
       </head>
       <body
-        className={`${inter.className} min-h-screen bg-gradient-to-br from-stone-100 via-rose-50 to-amber-50 text-stone-700 dark:bg-gradient-to-br dark:from-stone-800 dark:via-stone-700 dark:to-amber-900 dark:text-stone-200`}
+        className={`${inter.className} min-h-screen bg-morandi-gray-50 text-morandi-gray-900 dark:bg-morandi-gray-900 dark:text-morandi-gray-100`}
       >
         <ThemeProvider
           attribute='class'
@@ -115,6 +114,7 @@ export default async function RootLayout({
         >
           <SiteProvider siteName={siteName} announcement={announcement}>
             {children}
+            <GlobalErrorIndicator />
           </SiteProvider>
         </ThemeProvider>
       </body>

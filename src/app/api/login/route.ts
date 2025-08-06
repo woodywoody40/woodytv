@@ -159,7 +159,7 @@ export async function POST(req: NextRequest) {
 
       return response;
     } else if (username === process.env.USERNAME) {
-      return NextResponse.json({ error: '用户名或密码错误' }, { status: 401 });
+      return NextResponse.json({ error: '使用者名稱或密碼錯誤' }, { status: 401 });
     }
 
     const config = await getConfig();

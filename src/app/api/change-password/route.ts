@@ -33,7 +33,7 @@ export async function POST(request: NextRequest) {
 
     // 验证新密码
     if (!newPassword || typeof newPassword !== 'string') {
-      return NextResponse.json({ error: '新密码不得为空' }, { status: 400 });
+      return NextResponse.json({ error: '新密碼不能為空' }, { status: 400 });
     }
 
     const username = authInfo.username;

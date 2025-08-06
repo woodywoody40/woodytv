@@ -256,8 +256,8 @@ function SearchPageClient() {
                 type='text'
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                placeholder='搜尋電影、電視劇...（支援繁簡轉換）'
-                className='w-full h-12 rounded-lg bg-morandi-warmGray/20 py-3 pl-10 pr-4 text-sm text-stone-700 placeholder-stone-400 focus:outline-none focus:ring-2 focus:ring-morandi-sage focus:bg-white border border-stone-200/50 shadow-sm dark:bg-stone-800 dark:text-stone-300 dark:placeholder-stone-500 dark:focus:bg-stone-700 dark:border-stone-700'
+                placeholder='搜索电影、电视剧...'
+                className='w-full h-12 rounded-lg bg-gray-50/80 py-3 pl-10 pr-4 text-sm text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-400 focus:bg-white border border-gray-200/50 shadow-sm dark:bg-gray-800 dark:text-gray-300 dark:placeholder-gray-500 dark:focus:bg-gray-700 dark:border-gray-700'
               />
             </div>
           </form>
@@ -273,8 +273,8 @@ function SearchPageClient() {
             <section className='mb-12'>
               {/* 标题 + 聚合开关 */}
               <div className='mb-8 flex items-center justify-between'>
-                <h2 className='text-xl font-bold text-stone-800 dark:text-stone-200'>
-                  搜尋結果
+                <h2 className='text-xl font-bold text-gray-800 dark:text-gray-200'>
+                  搜索结果
                 </h2>
                 {/* 聚合开关 */}
                 <label className='flex items-center gap-2 cursor-pointer select-none'>
@@ -341,11 +341,7 @@ function SearchPageClient() {
                     ))}
                 {searchResults.length === 0 && (
                   <div className='col-span-full text-center text-gray-500 py-8 dark:text-gray-400'>
-                    <Search className='mx-auto mb-4 h-12 w-12' />
-                    <p>未找到相關結果</p>
-                    <p className='text-sm mt-2 text-gray-400'>
-                      💡 提示：系統已自動搜索繁體和簡體版本
-                    </p>
+                    未找到相关结果
                   </div>
                 )}
               </div>
@@ -353,8 +349,8 @@ function SearchPageClient() {
           ) : searchHistory.length > 0 ? (
             // 搜索历史
             <section className='mb-12'>
-              <h2 className='mb-4 text-xl font-bold text-stone-800 text-left dark:text-stone-200'>
-                搜尋歷史
+              <h2 className='mb-4 text-xl font-bold text-gray-800 text-left dark:text-gray-200'>
+                搜索历史
                 {searchHistory.length > 0 && (
                   <button
                     onClick={() => {
@@ -403,12 +399,12 @@ function SearchPageClient() {
       {/* 返回顶部悬浮按钮 */}
       <button
         onClick={scrollToTop}
-        className={`fixed bottom-20 md:bottom-6 right-6 z-[500] w-12 h-12 bg-morandi-sage/90 hover:bg-morandi-sage text-white rounded-full shadow-lg backdrop-blur-sm transition-all duration-300 ease-in-out flex items-center justify-center group ${
+        className={`fixed bottom-20 md:bottom-6 right-6 z-[500] w-12 h-12 bg-green-500/90 hover:bg-green-500 text-white rounded-full shadow-lg backdrop-blur-sm transition-all duration-300 ease-in-out flex items-center justify-center group ${
           showBackToTop
             ? 'opacity-100 translate-y-0 pointer-events-auto'
             : 'opacity-0 translate-y-4 pointer-events-none'
         }`}
-        aria-label='返回頂部'
+        aria-label='返回顶部'
       >
         <ChevronUp className='w-6 h-6 transition-transform group-hover:scale-110' />
       </button>
